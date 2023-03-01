@@ -4,20 +4,39 @@ import { BasicData } from "./basic-data.js";
 export class ChosenNumbers {
     private numbers : number[] = [];
     private matematica = new Matematica();
-    private data = new BasicData();
 
-    public adiciona (number : number) : void {
-        if(this.passouDeDois(this.numbers)) {
+    public adiciona (number : number, basic : BasicData) : void {
+        this.addAtArray(number);
+
+        //AO SER JOGADO NO REDUCE, OS DOIS NÚMEROS ESTÃO VIRANDO NEGATIVOS.
+
+        if(basic.getPressed() == '+') {
+            this.numbers = this.matematica.somar(this.numbers);
+            console.log(this.numbers);
             
-        } else {
-            this.numbers.push(number);
-            console.log(`número (${number}) adicionado com sucesso.)`);
-            console.log(`o Array atualmente conta com o(s) números: ${this.numbers}`);
+        }
+        if(basic.getPressed() == '-') {
+            this.numbers = this.matematica.subtrair(this.numbers);
+            console.log(this.numbers);
+            
+        }
+        if(basic.getPressed() == '*') {
+            this.numbers = this.matematica.multiplicar(this.numbers);
+            console.log(this.numbers);
+            
+        }
+        if(basic.getPressed() == '/') {
+            this.numbers = this.matematica.dividir(this.numbers);
+            console.log(this.numbers);
+
         }
     }
 
-    private passouDeDois (array : number[]) : boolean {
-        return array.length > 1;
+    public getArray () : number[] {
+        return this.numbers;
     }
 
+    private addAtArray (number : number) : void {
+        this.numbers.push(number);
+    }
 }

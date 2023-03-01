@@ -16,7 +16,7 @@ export function verifica(botao) {
             basic.updatePressed(botaoApertado);
             if (numerosApertado) {
                 let numerosTemp = parseInt(numerosApertado);
-                numbersController.adiciona(numerosTemp);
+                numbersController.adiciona(numerosTemp, basic);
                 numerosApertado = '';
             }
         }
@@ -29,6 +29,7 @@ export function verifica(botao) {
                 numerosApertado = botaoApertado;
                 telaController.atualizarTela(numerosApertado);
             }
+            console.log(numbersController.getArray());
         }
     }
 }
