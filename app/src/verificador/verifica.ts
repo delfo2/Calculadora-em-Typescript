@@ -1,28 +1,35 @@
 import { Tela } from "../atualizador/tela.js";
+import { BasicData } from "../memory/basic-data.js";
+import { ChosenNumbers } from "../memory/chosen-numbers.js";
 
+const basic = new BasicData();
 const telaController = new Tela();
+const numbersController = new ChosenNumbers();
 
-let numeroApertado : string;
-const simbolos = ['C', '.', '='];
-const operacoes = ['+', '-', '*', '/'];
-const numeros: string[] = Array.from({length: 11}, (_, i) => i.toString());
+let numerosApertado : string;
 
 export function verifica (botao : HTMLButtonElement) : void {
     let botaoApertado = botao.textContent;
     if(botaoApertado){
-        if(simbolos.includes(botaoApertado)) {
+        if(basic.simbolos.includes(botaoApertado)) {
             console.log(`encontramos um simbolo: ${botaoApertado}`);
         }
-        if(operacoes.includes(botaoApertado)) {
-            console.log(`encontramos uma operação: ${botaoApertado}`);
+        if(basic.operacoes.includes(botaoApertado)) {
+            telaController.atualizarTela(botaoApertado);
+            if(numerosApertado) {
+                let numerosTemp = parseInt(numerosApertado);
+                numbersController.adiciona(numerosTemp);
+                numerosApertado = '';
+            }
+            // console.log(`encontramos uma operação: ${botaoApertado}`);
         }
-        if(numeros.includes(botaoApertado)) {
-            if(numeroApertado) {
-                numeroApertado += botaoApertado;
-                telaController.atualizarTela(numeroApertado);
+        if(basic.numeros.includes(botaoApertado)) {
+            if(numerosApertado) {
+                numerosApertado += botaoApertado;
+                telaController.atualizarTela(numerosApertado);
             } else {
-                numeroApertado = botaoApertado;
-                telaController.atualizarTela(numeroApertado);
+                numerosApertado = botaoApertado;
+                telaController.atualizarTela(numerosApertado);
             }
         }
 

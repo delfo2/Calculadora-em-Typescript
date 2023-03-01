@@ -1,6 +1,6 @@
 export class Tela {
-    constructor(tela = document.querySelector('[data-tela=""]')) {
-        this.tela = tela;
+    constructor() {
+        this.tela = document.querySelector('[data-tela=""]');
     }
     limpaTela() {
         this.tela.value = '0';
