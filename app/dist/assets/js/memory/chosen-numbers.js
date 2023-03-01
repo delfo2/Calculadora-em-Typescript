@@ -1,10 +1,13 @@
+import { Matematica } from "../operators/matematica.js";
+import { BasicData } from "./basic-data.js";
 export class ChosenNumbers {
     constructor() {
         this.numbers = [];
+        this.matematica = new Matematica();
+        this.data = new BasicData();
     }
     adiciona(number) {
         if (this.passouDeDois(this.numbers)) {
-            console.log('o array chegou ao limite de bla bla bla');
         }
         else {
             this.numbers.push(number);

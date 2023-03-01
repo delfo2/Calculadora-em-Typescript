@@ -1,9 +1,14 @@
+import { Matematica } from "../operators/matematica.js";
+import { BasicData } from "./basic-data.js";
+
 export class ChosenNumbers {
     private numbers : number[] = [];
-    
+    private matematica = new Matematica();
+    private data = new BasicData();
+
     public adiciona (number : number) : void {
         if(this.passouDeDois(this.numbers)) {
-            console.log('o array chegou ao limite de bla bla bla');
+            
         } else {
             this.numbers.push(number);
             console.log(`número (${number}) adicionado com sucesso.)`);

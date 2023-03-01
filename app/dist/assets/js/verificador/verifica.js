@@ -13,6 +13,7 @@ export function verifica(botao) {
         }
         if (basic.operacoes.includes(botaoApertado)) {
             telaController.atualizarTela(botaoApertado);
+            basic.updatePressed(botaoApertado);
             if (numerosApertado) {
                 let numerosTemp = parseInt(numerosApertado);
                 numbersController.adiciona(numerosTemp);
