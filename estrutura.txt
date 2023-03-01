@@ -1,0 +1,41 @@
+interface {
+    botao {
+        clique {
+            
+            ver qual botão foi clicado {
+                numero {
+                    exibir na tela (preciso que o dado exibido seja string),
+                    salvar dado (em uma variavel string)
+                }
+                simbolo {
+                    verificar o simbolo exato {
+                        C {
+                            apagar todos os dados,
+                            exibir na tela
+                        }
+                        = {
+                            exibir o resultado {
+                                se necessario somar;
+                            }
+                        }
+                        . {
+                            acrescentar na string variavel um ponto;
+                        }
+                    }
+                }
+                operação {
+                    salvar dado do último conjunto de números em um array (pra somar o resultado),
+                    dar um push no array com o resultado para acrescentar,
+                    quando o array de resultados for maior que 2 {
+                        verificar o último simbolo apertado,
+                        zerar o array ou sobreescrever,
+                        fazer metodo reduce e salvar no mesmo array,
+                    }
+
+                    exibir na tela (preciso que o dado exibido seja string),
+
+                }
+            }
+        }
+    }
+}
