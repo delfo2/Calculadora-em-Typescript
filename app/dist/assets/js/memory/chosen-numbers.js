@@ -6,6 +6,7 @@ export class ChosenNumbers {
     }
     adiciona(number, basic) {
         this.addAtArray(number);
+        console.log(`a operação apertada que o ChosenNumbers recebeu foi: ${basic.getPressed()}`);
         if (basic.getPressed() == '+') {
             this.numbers = this.matematica.somar(this.numbers);
             console.log(this.numbers);
@@ -25,6 +26,9 @@ export class ChosenNumbers {
     }
     getArray() {
         return this.numbers;
+    }
+    apagaArray() {
+        this.numbers = [];
     }
     addAtArray(number) {
         this.numbers.push(number);

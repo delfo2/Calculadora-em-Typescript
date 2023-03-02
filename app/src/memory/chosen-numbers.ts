@@ -7,8 +7,7 @@ export class ChosenNumbers {
 
     public adiciona (number : number, basic : BasicData) : void {
         this.addAtArray(number);
-
-        //AO SER JOGADO NO REDUCE, OS DOIS NÚMEROS ESTÃO VIRANDO NEGATIVOS.
+        console.log(`a operação apertada que o ChosenNumbers recebeu foi: ${basic.getPressed()}`);
 
         if(basic.getPressed() == '+') {
             this.numbers = this.matematica.somar(this.numbers);
@@ -34,6 +33,10 @@ export class ChosenNumbers {
 
     public getArray () : number[] {
         return this.numbers;
+    }
+
+    public apagaArray () : void {
+        this.numbers = [];
     }
 
     private addAtArray (number : number) : void {

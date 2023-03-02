@@ -6,13 +6,34 @@ export class Matematica {
         return numbers.reduce((acc, atual) => { return [acc[0] + atual]; }, [0]);
     }
     subtrair(numbers) {
-        return numbers.reduce((acc, atual) => { return [acc[0] - atual]; }, [0]);
+        let resultado = [];
+        if (numbers.length > 1) {
+            resultado = [numbers[0] - numbers[1]];
+        }
+        else {
+            resultado = numbers;
+        }
+        return resultado;
     }
     dividir(numbers) {
-        return numbers.reduce((acc, atual) => { return [acc[0] / atual]; }, [0]);
+        let resultado = [];
+        if (numbers.length > 1) {
+            resultado = [numbers[0] / numbers[1]];
+        }
+        else {
+            resultado = numbers;
+        }
+        return resultado;
     }
     multiplicar(numbers) {
-        return numbers.reduce((acc, atual) => { return [acc[0] * atual]; }, [0]);
+        let resultado = [];
+        if (numbers.length > 1) {
+            resultado = [numbers[0] * numbers[1]];
+        }
+        else {
+            resultado = numbers;
+        }
+        return resultado;
     }
     getName() {
         return this.nome;
