@@ -1,5 +1,4 @@
 export class Matematica {
-    private nome = 'otavio';
 
     public somar (numbers : number[]) : number[] {
         return numbers.reduce((acc, atual) => {return [acc[0] + atual]},[0]);
@@ -30,9 +29,5 @@ export class Matematica {
             resultado = numbers;
         }
         return resultado;
-    }
-
-    public getName () : string {
-        return this.nome;
     }
 }
