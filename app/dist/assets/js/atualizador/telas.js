@@ -1,4 +1,4 @@
-export class Tela {
+export class Telas {
     constructor() {
         this.tela = document.querySelector('[data-tela=""]');
         this.historico = document.querySelector('[data-tela="historico"]');
@@ -11,10 +11,12 @@ export class Tela {
         this.tela.value = userValor;
     }
     atualizaHistorico(userHistoric) {
-        this.historico.textContent = userHistoric;
+        if (userHistoric !== '') {
+            this.historico.textContent = userHistoric;
+        }
     }
     apagaHistorico() {
-        this.historico.textContent = 'Histórico';
+        this.historico.textContent = 'Histórico apagado';
     }
     atualizaMensagem(userMensage) {
         this.mensagem.textContent = userMensage;

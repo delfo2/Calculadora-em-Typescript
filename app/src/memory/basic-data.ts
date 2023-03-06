@@ -1,3 +1,5 @@
+import { Telas } from "../atualizador/telas.js";
+
 export class BasicData {
     public readonly simbolos = ['C', '.', '='];
     public readonly operacoes = ['+', '-', '*', '/'];
@@ -11,9 +13,20 @@ export class BasicData {
     public getPressed () : string {
         return this.lastPressed;
     }
-    public updateAllPressed (tecla : string) : void {
-        this.allPressed = this.allPressed + tecla;
-        console.log(this.allPressed);
+    public updateAllPressed (tecla : string, tela : Telas) : void {
+        let canUpdate = true;
+
+        if(this.simbolos.includes(tecla) || this.operacoes.includes(tecla)) {
+            if(this.allPressed.endsWith(tecla)) {
+                tela.atualizaMensagem(`Pare de selecionar: ${tecla}`);
+                this.deleteAllPressed();
+                tela.apagaHistorico();
+                canUpdate = false;
+            }
+        }
+        if(canUpdate) {
+            this.allPressed = this.allPressed + tecla;
+        }
     }
     public deleteAllPressed () : void {
         this.allPressed = '';

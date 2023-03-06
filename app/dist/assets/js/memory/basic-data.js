@@ -12,9 +12,19 @@ export class BasicData {
     getPressed() {
         return this.lastPressed;
     }
-    updateAllPressed(tecla) {
-        this.allPressed = this.allPressed + tecla;
-        console.log(this.allPressed);
+    updateAllPressed(tecla, tela) {
+        let canUpdate = true;
+        if (this.simbolos.includes(tecla) || this.operacoes.includes(tecla)) {
+            if (this.allPressed.endsWith(tecla)) {
+                tela.atualizaMensagem(`Pare de selecionar: ${tecla}`);
+                this.deleteAllPressed();
+                tela.apagaHistorico();
+                canUpdate = false;
+            }
+        }
+        if (canUpdate) {
+            this.allPressed = this.allPressed + tecla;
+        }
     }
     deleteAllPressed() {
         this.allPressed = '';

@@ -13,38 +13,41 @@ export class ExtraFunctions {
             if(chosenButton == 'C') {
                 memoryNumbers.apagaArray();
                 zeraNumerosApertados();
+                basic.deleteAllPressed();
+                tela.apagaHistorico();
                 tela.limpaTela();
             }
+
             if(chosenButton == '.') {
                 console.log(`operador escolhido: ${chosenButton}`);
-                tela.atualizarTela('função não disponível!');
-                setTimeout(() => {
+                tela.atualizaMensagem('função não disponível!');
+                if(chosenNumber.length !== 0) {
                     tela.atualizarTela(chosenNumber);
-                }, 500)
+                } else {
+                    tela.limpaTela();
+                }
             }
+
             if(chosenButton == '=') {
-                // console.log(`operador escolhido: ${chosenButton}`);
+
+                setTimeout(() =>{
+
+                    basic.deleteAllPressed();
+                    tela.apagaHistorico();
+                }, 2000);
+
                 if(chosenNumber.length !== 0) {
                     let tempNumber = parseInt(chosenNumber);
                     memoryNumbers.adiciona(tempNumber, basic);
-                    // console.log(`entrou no If(!chosenNumber) e o resultado do Array foi: ${memoryNumbers.getArray()}`);
-                    // console.log(`enquanto o operador passado foi: ${basic.getPressed()}`);
                 }
                 if(chosenNumber.length === 0) {
-                    console.log('o array de chosenNumber estava vario, estamos colocando o valor zero.');
-
-                    tela.atualizarTela('Escolha mais números!');
-                    setTimeout(() => {
-                        tela.atualizarTela('0');
-                    }, 1000);
-
+                    tela.atualizaMensagem('Escolha mais números!');
+                    tela.limpaTela();
+                    
                 } else {
                     tela.atualizarTela(memoryNumbers.getArray().toString());
                 }
-                // console.log(`o resultado final do Array foi: ${memoryNumbers.getArray()}`);
-                // console.log(`zerando o último operador lógico escolhido...`);
                 basic.updatePressed('');
-                // console.log(`o último operador lógico escolhido foi: ${basic.getPressed()}`);
                 zeraNumerosApertados();
             }
     }

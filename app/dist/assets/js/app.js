@@ -1,7 +1,7 @@
 import { verifica } from "./verificador/verifica.js";
-import { Tela } from "./atualizador/tela.js";
+import { Telas } from "./atualizador/telas.js";
 const botoes = Array.from(document.querySelectorAll('[data-botao]'));
-const limpador = new Tela();
+const limpador = new Telas();
 limpador.limpaTela();
 if (botoes) {
     for (let botao of botoes) {

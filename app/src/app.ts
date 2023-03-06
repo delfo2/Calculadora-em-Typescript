@@ -1,10 +1,10 @@
 import { verifica } from "./verificador/verifica.js";
-import { Tela } from "./atualizador/telas.js";
+import { Telas } from "./atualizador/telas.js";
 
 const botoes : HTMLButtonElement[] = Array.from(document.querySelectorAll('[data-botao]'));
 
 //tirar esse limpador depois, usando só pra testes
-const limpador = new Tela();
+const limpador = new Telas();
 limpador.limpaTela();
 
 if(botoes) {

@@ -3,13 +3,6 @@ export class Telas {
     private historico : HTMLElement = <HTMLElement>document.querySelector('[data-tela="historico"]');
     private mensagem : HTMLElement = <HTMLElement>document.querySelector('[data-tela="mensagem"]');
 
-
-    public Teste () : void {
-        console.log(this.historico);
-        console.log(this.mensagem);
-        console.log('foi');
-    }
-
     public limpaTela () : void {
         this.tela.value = '0';
     }
@@ -20,17 +13,15 @@ export class Telas {
     }
 
     public atualizaHistorico (userHistoric : string) : void {
-        console.log(this.historico);
-        
-        this.historico.textContent = userHistoric;
+        if(userHistoric !== '') {
+            this.historico.textContent = userHistoric;
+        }
     }
     public apagaHistorico () : void {
-        this.historico.textContent = 'Histórico';
+        this.historico.textContent = 'Histórico apagado';
     }
     
     public atualizaMensagem (userMensage : string) : void {
-        console.log(this.mensagem);
-
         this.mensagem.textContent = userMensage;
     }
     public apagaMensagem () : void {
