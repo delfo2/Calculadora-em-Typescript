@@ -6,6 +6,7 @@
     --Fundo-site-gradiente2 : rgba(19,137,255,1);
 
     --Texto-cabecalho : #ffffff;
+    --Texto-preto: #000;
     --Fundo-texto : rgb(255, 255, 255);
     --Fundo-display : #ffffff;
     --Fundo-botoes : rgb(31, 74, 190);
@@ -63,14 +64,23 @@
     }
 }
 
-.calculadora__cabecalho {
-    margin-bottom: 2rem;
-}
-
 .calculadora__cabecalho-titulo {
     color: var(--Texto-cabecalho);
     font-size: var(--tamanho-texto);
     font-weight: 300;
+    margin: 1rem 0 .5rem 0;
+}
+
+.calculadora__informacoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calculadora__historico, .calculadora__mensagem {
+    color: var(--Texto-preto);
+    background-color: var(--Fundo-display);
+    border-radius: 5px;
+    padding: .2rem 1rem;
 }
 
 .calculadora__cabecalho-display {

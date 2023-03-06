@@ -23,6 +23,12 @@ export class ChosenNumbers {
             this.numbers = this.matematica.dividir(this.numbers);
             console.log(this.numbers);
         }
+        if (basic.getPressed() == '') {
+            this.apagaArray();
+            this.addAtArray(number);
+            console.log('detectamos que nenhum sinal foi escolhido, portanto a memória foi zerada e substituida pelo último número pressionado.');
+            console.log(this.numbers);
+        }
     }
     getArray() {
         return this.numbers;

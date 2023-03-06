@@ -15,11 +15,13 @@ export function verifica(botao) {
     let botaoApertado = botao.textContent;
     if (botaoApertado) {
         if (basic.simbolos.includes(botaoApertado)) {
+            basic.updateAllPressed(botaoApertado);
             extraFunctions.aplicaFuncaoExtra(basic, botaoApertado, telaController, numbersController, numerosApertado);
             console.log(`dentro do escopo da função verifica, o valor do númeroApertado é: ${numerosApertado}`);
         }
         if (basic.operacoes.includes(botaoApertado)) {
             telaController.atualizarTela(botaoApertado);
+            basic.updateAllPressed(botaoApertado);
             if (basic.getPressed() == '') {
                 basic.updatePressed(botaoApertado);
             }
@@ -31,6 +33,7 @@ export function verifica(botao) {
             basic.updatePressed(botaoApertado);
         }
         if (basic.numeros.includes(botaoApertado)) {
+            basic.updateAllPressed(botaoApertado);
             if (numerosApertado) {
                 numerosApertado += botaoApertado;
                 telaController.atualizarTela(numerosApertado);

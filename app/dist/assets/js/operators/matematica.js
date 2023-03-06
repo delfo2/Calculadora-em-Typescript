@@ -1,7 +1,4 @@
 export class Matematica {
-    constructor() {
-        this.nome = 'otavio';
-    }
     somar(numbers) {
         return numbers.reduce((acc, atual) => { return [acc[0] + atual]; }, [0]);
     }
@@ -34,8 +31,5 @@ export class Matematica {
             resultado = numbers;
         }
         return resultado;
-    }
-    getName() {
-        return this.nome;
     }
 }

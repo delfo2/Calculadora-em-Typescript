@@ -18,7 +18,16 @@ export class ExtraFunctions {
                 let tempNumber = parseInt(chosenNumber);
                 memoryNumbers.adiciona(tempNumber, basic);
             }
-            tela.atualizarTela(memoryNumbers.getArray().toString());
+            if (chosenNumber.length === 0) {
+                console.log('o array de chosenNumber estava vario, estamos colocando o valor zero.');
+                tela.atualizarTela('Escolha mais números!');
+                setTimeout(() => {
+                    tela.atualizarTela('0');
+                }, 1000);
+            }
+            else {
+                tela.atualizarTela(memoryNumbers.getArray().toString());
+            }
             basic.updatePressed('');
             zeraNumerosApertados();
         }

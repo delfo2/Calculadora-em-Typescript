@@ -7,12 +7,12 @@ export class ChosenNumbers {
 
     public adiciona (number : number, basic : BasicData) : void {
         this.addAtArray(number);
-        console.log(`a operação apertada que o ChosenNumbers recebeu foi: ${basic.getPressed()}`);
+        //console.log(`a operação apertada que o ChosenNumbers recebeu foi: ${basic.getPressed()}`);
 
         if(basic.getPressed() == '+') {
             this.numbers = this.matematica.somar(this.numbers);
             console.log(this.numbers);
-            
+
         }
         if(basic.getPressed() == '-') {
             this.numbers = this.matematica.subtrair(this.numbers);
@@ -27,7 +27,14 @@ export class ChosenNumbers {
         if(basic.getPressed() == '/') {
             this.numbers = this.matematica.dividir(this.numbers);
             console.log(this.numbers);
+            
+        }
+        if(basic.getPressed() == '') {
+            this.apagaArray();
+            this.addAtArray(number);
+            console.log('detectamos que nenhum sinal foi escolhido, portanto a memória foi zerada e substituida pelo último número pressionado.');
 
+            console.log(this.numbers);
         }
     }
 

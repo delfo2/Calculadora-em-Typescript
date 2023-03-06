@@ -1,5 +1,5 @@
 import { verifica } from "./verificador/verifica.js";
-import { Tela } from "./atualizador/tela.js";
+import { Tela } from "./atualizador/telas.js";
 
 const botoes : HTMLButtonElement[] = Array.from(document.querySelectorAll('[data-botao]'));
 
